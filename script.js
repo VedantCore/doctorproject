@@ -5,48 +5,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
     const htmlElement = document.documentElement;
 
-    // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
         htmlElement.classList.add('dark');
-        lightIcon.classList.add('hidden');
-        darkIcon.classList.remove('hidden');
+        lightIcon?.classList.add('hidden');
+        darkIcon?.classList.remove('hidden');
     }
 
-    // Toggle theme function
     const toggleTheme = () => {
         const isDark = htmlElement.classList.contains('dark');
-        
         if (isDark) {
-            // Switch to light mode
             htmlElement.classList.remove('dark');
             localStorage.setItem('theme', 'light');
-            lightIcon.classList.remove('hidden');
-            darkIcon.classList.add('hidden');
+            lightIcon?.classList.remove('hidden');
+            darkIcon?.classList.add('hidden');
         } else {
-            // Switch to dark mode
             htmlElement.classList.add('dark');
             localStorage.setItem('theme', 'dark');
-            lightIcon.classList.add('hidden');
-            darkIcon.classList.remove('hidden');
+            lightIcon?.classList.add('hidden');
+            darkIcon?.classList.remove('hidden');
         }
     };
 
-    themeToggle.addEventListener('click', toggleTheme);
+    themeToggle?.addEventListener('click', toggleTheme);
 
-    // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
         if (!localStorage.getItem('theme')) {
             if (e.matches) {
                 htmlElement.classList.add('dark');
-                lightIcon.classList.add('hidden');
-                darkIcon.classList.remove('hidden');
+                lightIcon?.classList.add('hidden');
+                darkIcon?.classList.remove('hidden');
             } else {
                 htmlElement.classList.remove('dark');
-                lightIcon.classList.remove('hidden');
-                darkIcon.classList.add('hidden');
+                lightIcon?.classList.remove('hidden');
+                darkIcon?.classList.add('hidden');
             }
         }
     });
@@ -58,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalBtn = document.getElementById('close-modal-btn');
 
     const openModal = () => {
+        if (!modal || !modalContent) return;
         modal.classList.remove('hidden');
         setTimeout(() => {
             modalContent.classList.remove('scale-95', 'opacity-0');
@@ -66,16 +61,18 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const closeModal = () => {
+        if (!modal || !modalContent) return;
         modalContent.classList.add('scale-95', 'opacity-0');
         modalContent.classList.remove('scale-100', 'opacity-100');
         setTimeout(() => {
             modal.classList.add('hidden');
         }, 300);
     };
-    
+
     openModalBtns.forEach(btn => btn.addEventListener('click', openModal));
-    closeModalBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
+    closeModalBtn?.addEventListener('click', closeModal);
+
+    modal?.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeModal();
         }
@@ -84,21 +81,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Mobile Menu Logic ---
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuBtn.addEventListener('click', () => {
+    const openIcon = document.getElementById('menu-open-icon');
+    const closeIcon = document.getElementById('menu-close-icon');
+
+    mobileMenuBtn?.addEventListener('click', () => {
+        if (!mobileMenu || !openIcon || !closeIcon) return;
+        const isMenuOpen = !mobileMenu.classList.contains('hidden');
         mobileMenu.classList.toggle('hidden');
+        openIcon.classList.toggle('hidden', !isMenuOpen);
+        closeIcon.classList.toggle('hidden', isMenuOpen);
     });
 
-    // Close mobile menu when a link is clicked
     document.querySelectorAll('#mobile-menu a').forEach(link => {
         link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
+            mobileMenu?.classList.add('hidden');
+            openIcon?.classList.remove('hidden');
+            closeIcon?.classList.add('hidden');
         });
     });
 
     // --- Active Nav Link on Scroll ---
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a.nav-link');
-    
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
