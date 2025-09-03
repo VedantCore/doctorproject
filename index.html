@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Naresh Agrawal | Best Health Promoter | Ayurvedic Doctor | Mount Abu</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-pastel-dark">
+
+    <!-- Header -->
+    <header id="header" class="header-pastel sticky top-0 z-50 shadow-sm transition-all duration-300">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-pastel-dark">Best Health Promoter</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-pastel-medium relative after:absolute after:bg-cyan-500 after:bottom-0 after:left-0 after:h-0.5 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-all after:duration-300 nav-link">Home</a>
+                <a href="#about" class="text-pastel-medium relative after:absolute after:bg-cyan-500 after:bottom-0 after:left-0 after:h-0.5 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-all after:duration-300 nav-link">About</a>
+                <a href="#services" class="text-pastel-medium relative after:absolute after:bg-cyan-500 after:bottom-0 after:left-0 after:h-0.5 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-all after:duration-300 nav-link">Services</a>
+                <a href="#download" class="text-pastel-medium relative after:absolute after:bg-cyan-500 after:bottom-0 after:left-0 after:h-0.5 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-all after:duration-300 nav-link">Download</a>
+                <a href="#contact" class="text-pastel-medium relative after:absolute after:bg-cyan-500 after:bottom-0 after:left-0 after:h-0.5 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-all after:duration-300 nav-link">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                 <button id="theme-toggle" class="p-2 rounded-md text-pastel-medium hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-300 transform hover:rotate-12" title="Toggle dark mode">
+                     <svg id="theme-toggle-light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                         <circle cx="12" cy="12" r="5"/>
+                         <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                     </svg>
+                     <svg id="theme-toggle-dark-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                     </svg>
+                 </button>
+                 <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-pastel-medium hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-300 transform hover:rotate-12">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                 </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-sm border-t border-cyan-100">
+            <a href="#home" class="block py-3 px-4 text-pastel-medium hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-300 transform hover:translate-x-2 nav-link">Home</a>
+            <a href="#about" class="block py-3 px-4 text-pastel-medium hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-300 transform hover:translate-x-2 nav-link">About</a>
+            <a href="#services" class="block py-3 px-4 text-pastel-medium hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-300 transform hover:translate-x-2 nav-link">Services</a>
+            <a href="#contact" class="block py-3 px-4 text-pastel-medium hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-300 transform hover:translate-x-2 nav-link">Contact</a>
+            <a href="#download" class="block py-3 px-4 text-pastel-medium hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-300 transform hover:translate-x-2 nav-link">Download</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="bg-pastel-primary">
+            <div class="container mx-auto px-4 py-16 md:py-24 text-center">
+                <p class="text-cyan-600 font-semibold mb-2">Best Health Promoter - Traditional Ayurvedic Healing in Mount Abu, Rajasthan</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-pastel-dark leading-tight">Dr. Naresh Agrawal</h1>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="#contact" class="btn-pastel-primary px-8 py-3 rounded-lg font-semibold">Contact US</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section bg-pastel-secondary">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-pastel-dark">About Dr. Naresh Agrawal</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-pastel-medium">Placeholder subtitle description for the doctor.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                    <div class="md:w-1/3">
+                        <img src="https://placehold.co/400x400/e2e8f0/334155?text=Dr.+Naresh+Agrawal" alt="Dr. Naresh Agrawal" class="rounded-full shadow-2xl mx-auto w-64 h-64 md:w-full md:h-auto object-cover">
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-semibold text-pastel-dark mb-4">Placeholder Philosophy Title</h3>
+                        <p class="text-pastel-medium mb-4">
+                            Placeholder description text about the doctor's approach and philosophy. This is where you would write about their treatment methods and beliefs in patient care.
+                        </p>
+                        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-pastel-dark mb-2">Education & Credentials</h4>
+                                <ul class="list-disc list-inside text-pastel-medium space-y-1">
+                                    <li>DEGREE PLACEHOLDER</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section bg-pastel-accent">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-pastel-dark">Our Ayurvedic Treatments</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-pastel-medium">Traditional healing therapies to restore balance and promote natural wellness.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service Card A -->
+                    <div class="card-pastel p-6 rounded-xl hover:-translate-y-1 transition-all">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full icon-pastel-rose mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19 12h2m-2 0a7 7 0 0 1-7 7m7-7a7 7 0 0 0-7-7m7 7H5m7 7v2m0-2a7 7 0 0 1-7-7m7 7a7 7 0 0 0 7-7M5 12H3m2 0a7 7 0 0 0 7-7M5 12a7 7 0 0 1 7 7M12 5V3"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-pastel-dark">Service A</h3>
+                        <p class="text-pastel-medium">Description for service A placeholder content.</p>
+                    </div>
+                    <!-- Service Card B -->
+                    <div class="card-pastel p-6 rounded-xl hover:-translate-y-1 transition-all">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full icon-pastel-cyan mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h12"/><path d="M12 6v12"/><circle cx="12" cy="12" r="9"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-pastel-dark">Service B</h3>
+                        <p class="text-pastel-medium">Description for service B placeholder content.</p>
+                    </div>
+                    <!-- Service Card C -->
+                    <div class="card-pastel p-6 rounded-xl hover:-translate-y-1 transition-all">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full icon-pastel-amber mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9l4-6z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-pastel-dark">Service C</h3>
+                        <p class="text-pastel-medium">Description for service C placeholder content.</p>
+                    </div>
+                     <!-- Service Card D -->
+                    <div class="card-pastel p-6 rounded-xl hover:-translate-y-1 transition-all">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full icon-pastel-emerald mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-pastel-dark">Service D</h3>
+                        <p class="text-pastel-medium">Description for service D placeholder content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!---->
+        <!-- Download Section -->
+        <section id="download" class="section bg-pastel-primary">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-pastel-dark">Books by Dr. Naresh Agrawal</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-pastel-medium">Download Dr. Agrawal's published works on Ayurvedic medicine and wellness.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Book 1 -->
+                    <div class="card-pastel p-6 rounded-xl hover:-translate-y-1 transition-all text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full icon-pastel-cyan mb-4 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-pastel-dark">Book 1</h3>
+                        <p class="text-pastel-medium mb-4">Placeholder description for the first book written by the doctor.</p>
+                        <a href="assets/book1.pdf" download="Book_1_Dr_Naresh_Agrawal.pdf" class="btn-pastel-primary px-6 py-2 rounded-lg font-semibold inline-block">Download PDF</a>
+                    </div>
+                    <!-- Book 2 -->
+                    <div class="card-pastel p-6 rounded-xl hover:-translate-y-1 transition-all text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full icon-pastel-emerald mb-4 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-pastel-dark">Book 2</h3>
+                        <p class="text-pastel-medium mb-4">Placeholder description for the second book written by the doctor.</p>
+                        <a href="assets/book2.pdf" download="Book_2_Dr_Naresh_Agrawal.pdf" class="btn-pastel-primary px-6 py-2 rounded-lg font-semibold inline-block">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="section bg-pastel-secondary">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-pastel-dark">Visit Our Ayurvedic Clinic</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-pastel-medium">Experience traditional healing in the serene environment of Mount Abu.</p>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 icon-pastel-cyan rounded-lg flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-pastel-dark"><u>Our Clinic:</u></h3>
+                                    <p class="text-pastel-medium">Dr. Naresh Agrawal, Ayurvedic Clinic,<br>Mount Abu,<br>Rajasthan - 000000</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 icon-pastel-emerald rounded-lg flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-pastel-dark"><u>Phone & Email:</u></h3>
+                                    <p class="text-pastel-medium">
+                                        Phone: <a href="tel:+919876543210" class="text-cyan-600 hover:underline">+91 12345 67890</a><br>
+                                        Email: <a href="mailto:info@besthealthpromoter.com" class="text-cyan-600 hover:underline">besthealthpromoter@abc.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                             <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 icon-pastel-violet rounded-lg flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-pastel-dark"><u>Consultation Timings:</u></h3>
+                                    <p class="text-pastel-medium">
+                                        Mon - Sat: 8:00 AM - 12:00 PM, 4:00 PM - 7:00 PM<br>
+                                        Sunday: 8:00 AM - 12:00 PM<br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 rounded-xl overflow-hidden shadow-2xl h-80 md:h-96 lg:h-auto">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29023.051523305956!2d72.70016695422441!3d24.593287548664634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395d2a7b9c58c24f%3A0x41ec48d89a772ec9!2sMount%20Abu%2C%20Rajasthan%20307501!5e0!3m2!1sen!2sin!4v1756913513909!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
