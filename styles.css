@@ -15,11 +15,10 @@ body {
 }
 
 .active-nav {
-    color: #06b6d4; /* Softer cyan-500 */
+    color: #06b6d4; 
     font-weight: 600;
 }
 
-/* Pastel color overrides */
 .bg-pastel-primary {
     background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%);
 }
@@ -33,18 +32,17 @@ body {
 }
 
 .text-pastel-dark {
-    color: #475569; /* Softer than slate-900 */
+    color: #475569; 
 }
 
 .text-pastel-medium {
-    color: #64748b; /* Softer than slate-600 */
+    color: #64748b; 
 }
 
 .text-pastel-light {
-    color: #94a3b8; /* Softer than original */
+    color: #94a3b8; 
 }
 
-/* Soft button styles */
 .btn-pastel-primary {
     background: linear-gradient(135deg, #67e8f9 0%, #06b6d4 100%);
     color: white;
@@ -73,7 +71,6 @@ body {
     transform: translateY(-1px);
 }
 
-/* Soft card styles */
 .card-pastel {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
@@ -87,7 +84,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* Soft icon backgrounds */
 .icon-pastel-cyan {
     background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
     color: #0891b2;
@@ -118,7 +114,6 @@ body {
     color: #4f46e5;
 }
 
-/* Custom scrollbar for better aesthetics */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -136,19 +131,16 @@ body {
     background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
 }
 
-/* Soft header style */
 .header-pastel {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Soft footer style */
 .footer-pastel {
     background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 }
 
-/* Dark Mode Styles */
 .dark {
     color-scheme: dark;
 }
@@ -170,7 +162,6 @@ body {
     color: #94a3b8;
 }
 
-/* Dark mode backgrounds */
 .dark .bg-pastel-primary {
     background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 }
@@ -183,14 +174,12 @@ body {
     background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
 }
 
-/* Dark mode header */
 .dark .header-pastel {
     background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Dark mode cards */
 .dark .card-pastel {
     background: rgba(30, 41, 59, 0.8);
     backdrop-filter: blur(10px);
@@ -203,7 +192,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Dark mode buttons */
 .dark .btn-pastel-primary {
     background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
     box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
@@ -224,8 +212,6 @@ body {
     background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
     box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
 }
-
-/* Dark mode icon backgrounds */
 .dark .icon-pastel-cyan {
     background: linear-gradient(135deg, #164e63 0%, #0e7490 100%);
     color: #67e8f9;
@@ -255,19 +241,14 @@ body {
     background: linear-gradient(135deg, #312e81 0%, #4f46e5 100%);
     color: #a5b4fc;
 }
-
-/* Dark mode mobile menu */
 .dark #mobile-menu {
     background: rgba(15, 23, 42, 0.95);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-/* Dark mode footer */
 .dark .footer-pastel {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
-/* Dark mode scrollbar */
 .dark ::-webkit-scrollbar-track {
     background: linear-gradient(135deg, #1e293b 0%, #374151 100%);
 }
@@ -280,7 +261,6 @@ body {
     background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
 }
 
-/* Dark mode form inputs */
 .dark input, .dark textarea {
     background: rgba(30, 41, 59, 0.8) !important;
     border-color: rgba(100, 116, 139, 0.3) !important;
@@ -295,13 +275,10 @@ body {
 .dark input::placeholder, .dark textarea::placeholder {
     color: #94a3b8;
 }
-
-/* Dark mode hover effects */
 .dark .hover\\:bg-gradient-to-r:hover {
     background: linear-gradient(to right, rgba(30, 41, 59, 0.8), rgba(51, 65, 85, 0.8)) !important;
 }
 
-/* Dark mode theme toggle button */
 .dark #theme-toggle:hover {
     background: linear-gradient(to right, rgba(30, 41, 59, 0.8), rgba(51, 65, 85, 0.8)) !important;
 }

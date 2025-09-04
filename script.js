@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Dark Mode Toggle Logic ---
+    // Dark Mode
     const themeToggle = document.getElementById('theme-toggle');
     const lightIcon = document.getElementById('theme-toggle-light-icon');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Modal Logic ---
     const modal = document.getElementById('appointment-modal');
     const modalContent = document.getElementById('modal-content');
     const openModalBtns = document.querySelectorAll('.open-modal-btn');
@@ -78,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Mobile Menu Logic ---
+    // Mobile
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const openIcon = document.getElementById('menu-open-icon');
@@ -100,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Active Nav Link on Scroll ---
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a.nav-link');
 
