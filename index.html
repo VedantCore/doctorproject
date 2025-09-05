@@ -70,6 +70,25 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Photo Slideshow -->
+        <section id="gallery" class="section bg-pastel-accent">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-pastel-dark">Seminar Photos</h2>
+                    <p class="mt-2 max-w-2xl mx-auto text-lg text-pastel-medium">An insight into the peaceful and restorative seminar setting led by Dr. Naresh Agrawal.</p>
+                </div>
+                <div class="photo-gallery-wrapper">
+                    <div id="photo-gallery" class="photo-gallery">
+                        <img src="https://placehold.co/1200x800/e0e7ff/4f46e5?text=Seminar+Photo+1" alt="Seminar Photo 1">
+                        <img src="https://placehold.co/1200x800/dbeafe/1d4ed8?text=Seminar+Photo+2" alt="Seminar Photo 2">
+                        <img src="https://placehold.co/1200x800/cffafe/0891b2?text=Seminar+Photo+3" alt="Seminar Photo 3">
+                    </div>
+                    <button id="photo-prev-btn" class="photo-nav-btn">&#10094;</button>
+                    <button id="photo-next-btn" class="photo-nav-btn">&#10095;</button>
+                </div>
+            </div>
+        </section>
 
         <!-- Books  -->
         <section id="download" class="section bg-pastel-primary">
@@ -233,10 +252,10 @@
                                     </a>
                                     <a href="https://instagram.com/" target="_blank" class="w-10 h-10 bg-gray-500 text-white rounded-lg flex items-center justify-center hover:scale-110 hover:bg-gray-600 transition-all duration-300" title="Instagram">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
                                         </svg>
                                     </a> <!-- Disabled LinkedIn, Facebook, Instagram for now -->
-                                    <a id="open-youtube-modal-btn" class="w-10 h-10 bg-gray-500 text-white rounded-lg flex items-center justify-center hover:scale-110 hover:bg-gray-600 transition-all duration-300" title="YouTube">
+                                    <a href="#" id="open-youtube-modal-btn" class="w-10 h-10 bg-gray-500 text-white rounded-lg flex items-center justify-center hover:scale-110 hover:bg-gray-600 transition-all duration-300" title="YouTube">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                                         </svg>
@@ -306,25 +325,6 @@
             </div>
         </section>
     </main>
-    <div id="youtube-modal" class="hidden fixed inset-0 z-[99] flex items-center justify-center bg-gray-900 bg-opacity-75 transition-opacity duration-300">
-        <div id="youtube-modal-content" class="relative bg-white dark:bg-slate-800 rounded-xl shadow-xl w-full max-w-2xl m-4 p-4 transform transition-transform duration-300 scale-100">
-            <button id="close-youtube-modal-btn" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-all duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </button>
-            <div class="relative pb-[56.25%] h-0">
-                <iframe id="youtube-iframe" class="absolute top-0 left-0 w-full h-full rounded-xl" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-             <div class="flex justify-between mt-4">
-                <button id="youtube-prev-btn" class="px-4 py-2 rounded-lg font-semibold btn-pastel-secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <button id="youtube-next-btn" class="px-4 py-2 rounded-lg font-semibold btn-pastel-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>

@@ -189,4 +189,31 @@ document.addEventListener('DOMContentLoaded', () => {
         currentVideoIndex = (currentVideoIndex + 1) % videoList.length;
         loadVideo(currentVideoIndex);
     });
+
+    // --- Photo Slideshow Logic ---
+    const photoGallery = document.getElementById('photo-gallery');
+    const photoPrevBtn = document.getElementById('photo-prev-btn');
+    const photoNextBtn = document.getElementById('photo-next-btn');
+
+    let currentPhotoIndex = 0;
+    const photos = photoGallery?.querySelectorAll('img');
+    const totalPhotos = photos?.length;
+
+    if (totalPhotos > 0) {
+        photoNextBtn?.addEventListener('click', () => {
+            currentPhotoIndex = (currentPhotoIndex + 1) % totalPhotos;
+            updatePhotoGallery();
+        });
+
+        photoPrevBtn?.addEventListener('click', () => {
+            currentPhotoIndex = (currentPhotoIndex - 1 + totalPhotos) % totalPhotos;
+            updatePhotoGallery();
+        });
+
+        const updatePhotoGallery = () => {
+            if (!photoGallery) return;
+            const offset = -currentPhotoIndex * 100;
+            photoGallery.style.transform = `translateX(${offset}%)`;
+        };
+    }
 });
