@@ -24,6 +24,7 @@
                 <a href="#download" class="text-pastel-medium relative after:absolute after:bg-cyan-500 after:bottom-0 after:left-0 after:h-0.5 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-all after:duration-300 nav-link">Books</a>
                 <a href="#services" class="text-pastel-medium relative after:absolute after:bg-cyan-500 after:bottom-0 after:left-0 after:h-0.5 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-all after:duration-300 nav-link">Services</a>
                 <a href="#about" class="text-pastel-medium relative after:absolute after:bg-cyan-500 after:bottom-0 after:left-0 after:h-0.5 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-all after:duration-300 nav-link">About</a>
+                <a href="#videos" class="text-pastel-medium relative after:absolute after:bg-cyan-500 after:bottom-0 after:left-0 after:h-0.5 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-all after:duration-300 nav-link">Videos</a>
                 <a href="#contact" class="text-pastel-medium relative after:absolute after:bg-cyan-500 after:bottom-0 after:left-0 after:h-0.5 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-all after:duration-300 nav-link">Contact</a>
             </div>
             <div class="flex items-center space-x-4">
@@ -49,6 +50,7 @@
                 <a href="#download" class="block py-3 px-4 text-slate-700 dark:text-slte-300 hover:bg-cyan-50 hover:text-cyan-700 dark:hover:bg-slate-800 dark:hover:text-cyan-400 transition-all duration-300 transform hover:translate-x-2 nav-link rounded-md">Books</a>
                 <a href="#services" class="block py-3 px-4 text-slate-700 dark:text-slate-300 hover:bg-cyan-50 hover:text-cyan-700 dark:hover:bg-slate-800 dark:hover:text-cyan-400 transition-all duration-300 transform hover:translate-x-2 nav-link rounded-md">Services</a>
                 <a href="#about" class="block py-3 px-4 text-slate-700 dark:text-slate-300 hover:bg-cyan-50 hover:text-cyan-700 dark:hover:bg-slate-800 dark:hover:text-cyan-400 transition-all duration-300 transform hover:translate-x-2 nav-link rounded-md">About</a>
+                <a href="#videos" class="block py-3 px-4 text-slate-700 dark:text-slate-300 hover:bg-cyan-50 hover:text-cyan-700 dark:hover:bg-slate-800 dark:hover:text-cyan-400 transition-all duration-300 transform hover:translate-x-2 nav-link rounded-md">Videos</a>
                 <a href="#contact" class="block py-3 px-4 text-slate-700 dark:text-slate-300 hover:bg-cyan-50 hover:text-cyan-700 dark:hover:bg-slate-800 dark:hover:text-cyan-400 transition-all duration-300 transform hover:translate-x-2 nav-link rounded-md">Contact</a>
             </div>
         </div>
@@ -237,32 +239,36 @@
                                 <li>Practitioner of Guru Yoga and meditation for 28 years</li>
                             </ul>
                             </div>
-                            
-                            <!-- Mini Video Player -->
-                            <div class="video-preview-container flex flex-col items-center">
-                                <div class="relative w-full overflow-hidden rounded-xl shadow-xl video-preview-player">
-                                    <div class="relative w-full" style="padding-top: 56.25%;">
-                                        <iframe id="video-player" class="absolute top-0 left-0 w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <div id="video-thumbnail" class="absolute top-0 left-0 w-full h-full cursor-pointer flex items-center justify-center bg-gray-900 bg-opacity-75 transition-opacity duration-300">
-                                        <img id="thumbnail-image" src="" alt="Video Thumbnail" class="w-full h-full object-cover">
-                                        <svg id="play-button" class="absolute h-16 w-16 text-white transition-transform duration-300 transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M8 5v14l11-7z"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="flex items-center justify-center mt-4">
-                                    <button id="prev-video-btn" class="btn-pastel-primary px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg mr-2">
-                                        &#10094; Previous
-                                    </button>
-                                    <button id="next-video-btn" class="btn-pastel-primary px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                                        Next &#10095;
-                                    </button>
-                                </div>
-                            </div>
-                            
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Videos Section -->
+        <section id="videos" class="section bg-pastel-primary">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-pastel-dark">Watch Our Seminars</h2>
+                    <p class="mt-2 max-w-2xl mx-auto text-lg text-pastel-medium">Learn more about natural healing and wellness from Dr. Agrawal's talks.</p>
+                </div>
+                <div class="video-gallery-wrapper">
+                    <div class="relative w-full overflow-hidden rounded-xl shadow-xl">
+                        <!-- 16:9 Aspect Ratio -->
+                        <div class="relative w-full" style="padding-top: 56.25%;"> 
+                            <iframe id="video-player" class="absolute top-0 left-0 w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div id="video-thumbnail" class="absolute top-0 left-0 w-full h-full cursor-pointer flex items-center justify-center bg-black">
+                                <img id="thumbnail-image" src="" alt="Video Thumbnail" class="w-full h-full object-cover opacity-75">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                     <svg id="play-button" class="h-20 w-20 text-white/80 transition-transform duration-300 transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="prev-video-btn" class="video-nav-btn">&#10094;</button>
+                    <button id="next-video-btn" class="video-nav-btn">&#10095;</button>
                 </div>
             </div>
         </section>
