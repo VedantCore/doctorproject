@@ -153,9 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const playButton = document.getElementById('play-button');
 
     const videoList = [
-        "JvM7D6G-Hts",
-        "nEa4F7mQ8iQ",
-        "8QY4P4lD9s4"
+        "5bBdJmGv-Q4",
+        "dwI9oWCTTow",
+        "cQ8j4ZagfIA"
+        "eCdXKIkpreA"
     ];
     let currentVideoIndex = 0;
 
