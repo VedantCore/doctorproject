@@ -45,35 +45,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const modal = document.getElementById('appointment-modal');
-    const modalContent = document.getElementById('modal-content');
-    const openModalBtns = document.querySelectorAll('.open-modal-btn');
-    const closeModalBtn = document.getElementById('close-modal-btn');
+    const appointmentModal = document.getElementById('appointment-modal');
+    const appointmentModalContent = document.getElementById('modal-content');
+    const openAppointmentModalBtns = document.querySelectorAll('.open-modal-btn');
+    const closeAppointmentModalBtn = document.getElementById('close-modal-btn');
 
-    const openModal = () => {
-        if (!modal || !modalContent) return;
-        modal.classList.remove('hidden');
+    const openAppointmentModal = () => {
+        if (!appointmentModal || !appointmentModalContent) return;
+        appointmentModal.classList.remove('hidden');
         setTimeout(() => {
-            modalContent.classList.remove('scale-95', 'opacity-0');
-            modalContent.classList.add('scale-100', 'opacity-100');
+            appointmentModalContent.classList.remove('scale-95', 'opacity-0');
+            appointmentModalContent.classList.add('scale-100', 'opacity-100');
         }, 10);
     };
 
-    const closeModal = () => {
-        if (!modal || !modalContent) return;
-        modalContent.classList.add('scale-95', 'opacity-0');
-        modalContent.classList.remove('scale-100', 'opacity-100');
+    const closeAppointmentModal = () => {
+        if (!appointmentModal || !appointmentModalContent) return;
+        appointmentModalContent.classList.add('scale-95', 'opacity-0');
+        appointmentModalContent.classList.remove('scale-100', 'opacity-100');
         setTimeout(() => {
-            modal.classList.add('hidden');
+            appointmentModal.classList.add('hidden');
         }, 300);
     };
 
-    openModalBtns.forEach(btn => btn.addEventListener('click', openModal));
-    closeModalBtn?.addEventListener('click', closeModal);
+    openAppointmentModalBtns.forEach(btn => btn.addEventListener('click', openAppointmentModal));
+    closeAppointmentModalBtn?.addEventListener('click', closeAppointmentModal);
 
-    modal?.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
+    appointmentModal?.addEventListener('click', (e) => {
+        if (e.target === appointmentModal) {
+            closeAppointmentModal();
         }
     });
 
@@ -126,30 +126,50 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // --- YouTube Video Modal Logic ---
+    // --- YouTube Modal Logic ---
     const youtubeModal = document.getElementById('youtube-modal');
     const youtubeIframe = document.getElementById('youtube-iframe');
     const openYoutubeModalBtn = document.getElementById('open-youtube-modal-btn');
     const closeYoutubeModalBtn = document.getElementById('close-youtube-modal-btn');
+    const youtubePrevBtn = document.getElementById('youtube-prev-btn');
+    const youtubeNextBtn = document.getElementById('youtube-next-btn');
 
-    openYoutubeModalBtn?.addEventListener('click', () => {
-        if (!youtubeModal || !youtubeIframe) return;
+    // Add video IDs here for your channel in newest to oldest order
+    const videoList = [
+        "X_0XwhaeENA",
+        "5bBdJmGv-Q4",
+        "dwI9oWCTTow",
+        "mpT5qu2ZnJg"
+    ];
 
-        const videoId = openYoutubeModalBtn.getAttribute('data-video-id');
+    let currentVideoIndex = 0;
+
+    const loadVideo = (index) => {
+        const videoId = videoList[index];
         const videoSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
         youtubeIframe.src = videoSrc;
-        
-        youtubeModal.classList.remove('hidden', 'opacity-0');
-        youtubeModal.classList.add('flex', 'opacity-100');
+    };
+
+    openYoutubeModalBtn?.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        if (!youtubeModal) return;
+
+        // Reset to the first video in the list
+        currentVideoIndex = 0;
+        loadVideo(currentVideoIndex);
+
+        youtubeModal.classList.remove('hidden');
+        youtubeModal.classList.add('flex');
     });
 
     const closeYoutubeModal = () => {
         if (!youtubeModal || !youtubeIframe) return;
+
+        // Stop the video from playing when the modal is closed
+        youtubeIframe.src = "";
         
-        youtubeIframe.src = ""; // Stop the video from playing
-        
-        youtubeModal.classList.remove('flex', 'opacity-100');
-        youtubeModal.classList.add('hidden', 'opacity-0');
+        youtubeModal.classList.remove('flex');
+        youtubeModal.classList.add('hidden');
     };
 
     closeYoutubeModalBtn?.addEventListener('click', closeYoutubeModal);
@@ -160,4 +180,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    youtubePrevBtn?.addEventListener('click', () => {
+        currentVideoIndex = (currentVideoIndex - 1 + videoList.length) % videoList.length;
+        loadVideo(currentVideoIndex);
+    });
+
+    youtubeNextBtn?.addEventListener('click', () => {
+        currentVideoIndex = (currentVideoIndex + 1) % videoList.length;
+        loadVideo(currentVideoIndex);
+    });
 });
