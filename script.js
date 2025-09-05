@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoList = [
         "5bBdJmGv-Q4",
         "dwI9oWCTTow",
-        "cQ8j4ZagfIA"
+        "cQ8j4ZagfIA",
         "eCdXKIkpreA"
     ];
     let currentVideoIndex = 0;
