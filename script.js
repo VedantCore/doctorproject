@@ -125,4 +125,39 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         observer.observe(section);
     });
+
+    // --- YouTube Video Modal Logic ---
+    const youtubeModal = document.getElementById('youtube-modal');
+    const youtubeIframe = document.getElementById('youtube-iframe');
+    const openYoutubeModalBtn = document.getElementById('open-youtube-modal-btn');
+    const closeYoutubeModalBtn = document.getElementById('close-youtube-modal-btn');
+
+    openYoutubeModalBtn?.addEventListener('click', () => {
+        if (!youtubeModal || !youtubeIframe) return;
+
+        const videoId = openYoutubeModalBtn.getAttribute('data-video-id');
+        const videoSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        youtubeIframe.src = videoSrc;
+        
+        youtubeModal.classList.remove('hidden', 'opacity-0');
+        youtubeModal.classList.add('flex', 'opacity-100');
+    });
+
+    const closeYoutubeModal = () => {
+        if (!youtubeModal || !youtubeIframe) return;
+        
+        youtubeIframe.src = ""; // Stop the video from playing
+        
+        youtubeModal.classList.remove('flex', 'opacity-100');
+        youtubeModal.classList.add('hidden', 'opacity-0');
+    };
+
+    closeYoutubeModalBtn?.addEventListener('click', closeYoutubeModal);
+
+    youtubeModal?.addEventListener('click', (e) => {
+        if (e.target === youtubeModal) {
+            closeYoutubeModal();
+        }
+    });
+
 });
