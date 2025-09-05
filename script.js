@@ -45,38 +45,59 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const appointmentModal = document.getElementById('appointment-modal');
-    const appointmentModalContent = document.getElementById('modal-content');
-    const openAppointmentModalBtns = document.querySelectorAll('.open-modal-btn');
-    const closeAppointmentModalBtn = document.getElementById('close-modal-btn');
+    // Photo Slideshow
+    const gallery = document.getElementById('photo-gallery');
+    const prevBtn = document.getElementById('photo-prev-btn');
+    const nextBtn = document.getElementById('photo-next-btn');
+    const images = gallery.querySelectorAll('img');
+    const imageWidth = images.length > 0 ? images[0].clientWidth : 0;
 
-    const openAppointmentModal = () => {
-        if (!appointmentModal || !appointmentModalContent) return;
-        appointmentModal.classList.remove('hidden');
-        setTimeout(() => {
-            appointmentModalContent.classList.remove('scale-95', 'opacity-0');
-            appointmentModalContent.classList.add('scale-100', 'opacity-100');
-        }, 10);
+    let currentIndex = 0;
+    let slideshowInterval;
+
+    const updateGallery = () => {
+        gallery.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
     };
 
-    const closeAppointmentModal = () => {
-        if (!appointmentModal || !appointmentModalContent) return;
-        appointmentModalContent.classList.add('scale-95', 'opacity-0');
-        appointmentModalContent.classList.remove('scale-100', 'opacity-100');
-        setTimeout(() => {
-            appointmentModal.classList.add('hidden');
-        }, 300);
+    const startSlideshow = () => {
+        clearInterval(slideshowInterval);
+        slideshowInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateGallery();
+        }, 7000); // 7 seconds
     };
 
-    openAppointmentModalBtns.forEach(btn => btn.addEventListener('click', openAppointmentModal));
-    closeAppointmentModalBtn?.addEventListener('click', closeAppointmentModal);
+    const resetAndStartSlideshow = () => {
+        clearInterval(slideshowInterval);
+        startSlideshow();
+    };
 
-    appointmentModal?.addEventListener('click', (e) => {
-        if (e.target === appointmentModal) {
-            closeAppointmentModal();
-        }
+    prevBtn?.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateGallery();
+        resetAndStartSlideshow();
     });
 
+    nextBtn?.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateGallery();
+        resetAndStartSlideshow();
+    });
+
+    if (images.length > 0) {
+        // Set up the initial gallery position after images have loaded
+        images[0].addEventListener('load', () => {
+            updateGallery();
+            startSlideshow();
+        });
+
+        // Fallback in case images are already loaded from cache
+        if (images[0].complete) {
+            updateGallery();
+            startSlideshow();
+        }
+    }
+    
     // Mobile
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -125,95 +146,54 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         observer.observe(section);
     });
+    
+    // Video Player
+    const videoPlayer = document.getElementById('video-player');
+    const videoThumbnail = document.getElementById('video-thumbnail');
+    const playButton = document.getElementById('play-button');
 
-    // --- YouTube Modal Logic ---
-    const youtubeModal = document.getElementById('youtube-modal');
-    const youtubeIframe = document.getElementById('youtube-iframe');
-    const openYoutubeModalBtn = document.getElementById('open-youtube-modal-btn');
-    const closeYoutubeModalBtn = document.getElementById('close-youtube-modal-btn');
-    const youtubePrevBtn = document.getElementById('youtube-prev-btn');
-    const youtubeNextBtn = document.getElementById('youtube-next-btn');
-
-    // Add video IDs here for your channel in newest to oldest order
     const videoList = [
-        "X_0XwhaeENA",
-        "5bBdJmGv-Q4",
-        "dwI9oWCTTow",
-        "mpT5qu2ZnJg"
+        "JvM7D6G-Hts",
+        "nEa4F7mQ8iQ",
+        "8QY4P4lD9s4"
     ];
-
     let currentVideoIndex = 0;
 
-    const loadVideo = (index) => {
+    const updateVideo = (index) => {
         const videoId = videoList[index];
-        const videoSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-        youtubeIframe.src = videoSrc;
+        const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+        document.getElementById('thumbnail-image').src = thumbnailUrl;
+        videoPlayer.src = "";
+        videoThumbnail.classList.remove('hidden');
     };
 
-    openYoutubeModalBtn?.addEventListener('click', (e) => {
-        e.preventDefault(); 
-        if (!youtubeModal) return;
-
-        // Reset to the first video in the list
-        currentVideoIndex = 0;
-        loadVideo(currentVideoIndex);
-
-        youtubeModal.classList.remove('hidden');
-        youtubeModal.classList.add('flex');
-    });
-
-    const closeYoutubeModal = () => {
-        if (!youtubeModal || !youtubeIframe) return;
-
-        // Stop the video from playing when the modal is closed
-        youtubeIframe.src = "";
-        
-        youtubeModal.classList.remove('flex');
-        youtubeModal.classList.add('hidden');
+    const playVideo = () => {
+        const videoId = videoList[currentVideoIndex];
+        const videoSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+        videoPlayer.src = videoSrc;
+        videoThumbnail.classList.add('hidden');
     };
-
-    closeYoutubeModalBtn?.addEventListener('click', closeYoutubeModal);
-
-    youtubeModal?.addEventListener('click', (e) => {
-        if (e.target === youtubeModal) {
-            closeYoutubeModal();
-        }
-    });
-
-    youtubePrevBtn?.addEventListener('click', () => {
-        currentVideoIndex = (currentVideoIndex - 1 + videoList.length) % videoList.length;
-        loadVideo(currentVideoIndex);
-    });
-
-    youtubeNextBtn?.addEventListener('click', () => {
+    
+    const nextVideo = () => {
         currentVideoIndex = (currentVideoIndex + 1) % videoList.length;
-        loadVideo(currentVideoIndex);
-    });
+        updateVideo(currentVideoIndex);
+    };
 
-    // --- Photo Slideshow Logic ---
-    const photoGallery = document.getElementById('photo-gallery');
-    const photoPrevBtn = document.getElementById('photo-prev-btn');
-    const photoNextBtn = document.getElementById('photo-next-btn');
+    const prevVideo = () => {
+        currentVideoIndex = (currentVideoIndex - 1 + videoList.length) % videoList.length;
+        updateVideo(currentVideoIndex);
+    };
 
-    let currentPhotoIndex = 0;
-    const photos = photoGallery?.querySelectorAll('img');
-    const totalPhotos = photos?.length;
+    videoThumbnail?.addEventListener('click', playVideo);
 
-    if (totalPhotos > 0) {
-        photoNextBtn?.addEventListener('click', () => {
-            currentPhotoIndex = (currentPhotoIndex + 1) % totalPhotos;
-            updatePhotoGallery();
-        });
+    const nextBtnVideo = document.getElementById('next-video-btn');
+    const prevBtnVideo = document.getElementById('prev-video-btn');
 
-        photoPrevBtn?.addEventListener('click', () => {
-            currentPhotoIndex = (currentPhotoIndex - 1 + totalPhotos) % totalPhotos;
-            updatePhotoGallery();
-        });
+    nextBtnVideo?.addEventListener('click', nextVideo);
+    prevBtnVideo?.addEventListener('click', prevVideo);
 
-        const updatePhotoGallery = () => {
-            if (!photoGallery) return;
-            const offset = -currentPhotoIndex * 100;
-            photoGallery.style.transform = `translateX(${offset}%)`;
-        };
+    // Initial video load
+    if (videoList.length > 0) {
+        updateVideo(currentVideoIndex);
     }
 });

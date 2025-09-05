@@ -40,7 +40,7 @@ body {
 }
 
 .text-pastel-light {
-    color: #94a3b8; 
+    color: #94a3b8;
 }
 
 .btn-pastel-primary {
@@ -285,49 +285,70 @@ body {
 
 .photo-gallery-wrapper {
     position: relative;
-    max-width: 900px; /* Adjust max width as needed */
+    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .photo-gallery {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 }
 
 .photo-gallery img {
-    min-width: 100%;
-    max-width: 100%;
-    display: block;
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    display: inline-block;
 }
 
 .photo-nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
+    padding: 10px;
     cursor: pointer;
     z-index: 10;
-    transition: background-color 0.3s ease;
+    font-size: 24px;
+    transition: background 0.3s ease;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    opacity: 0;
 }
 
 .photo-nav-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-#photo-prev-btn {
-    left: 0;
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 #photo-next-btn {
-    right: 0;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
+    right: 10px;
+}
+
+#photo-prev-btn {
+    left: 10px;
+}
+
+.photo-gallery-wrapper:hover .photo-nav-btn {
+    opacity: 1;
+}
+
+/* New CSS for Video Player */
+.video-preview-container {
+    max-width: 600px;
+    margin: 0 auto;
 }
